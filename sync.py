@@ -9,7 +9,7 @@ tz_region = os.environ.get("timezone")
 
 # GOAL: move all data in the takeout folder and enter it into a singular csv table, preprocessed as imports.  Converts to EST, which could be in a config file
 
-working_dir = 'data/imports/Takeout/Fitbit/Physical Activity_GoogleData'
+working_dir = os.environ.get('source_dir')
 
 def process_file(fpath):
 
