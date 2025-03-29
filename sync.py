@@ -25,7 +25,7 @@ def process_file(fpath):
 agg_data = pd.DataFrame()
 
 for fname in os.listdir(working_dir):
-    if '.csv' in fname and 'heart_rate_' in fname and 'variability' not in fname:
+    if '.csv' in fname and 'heart_rate_' in fname and 'variability' not in fname and '2025' in fname:
         processed_data = process_file(f'{working_dir}/{fname}')
         agg_data = pd.concat([agg_data, processed_data], ignore_index=True)
 
