@@ -1,6 +1,5 @@
 import pandas as pd
 import os 
-from pprint import pprint
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,6 +18,9 @@ def process_file(fpath):
     data_import['timestamp'] = data_import['timestamp'].dt.tz_convert(tz_region)
 
     data_import['date'] = data_import['timestamp'].dt.date
+
+    data_import['timestamp'] = data_import['timestamp'].apply(lambda x : x.strftime("%Y-%m-%d %H:%M:%S"))
+
 
     return data_import
 
